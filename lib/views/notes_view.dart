@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/wedgits/costum_listview.dart';
+import 'package:notes_app/wedgits/custom_bottom_sheet.dart';
 
 class NotesView extends StatelessWidget {
   const NotesView({super.key});
@@ -8,7 +9,15 @@ class NotesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16)),
+              context: context,
+              builder: (contxt) {
+                return const CostumBottomSheet();
+              });
+        },
         child: Icon(Icons.add),
       ),
       appBar: AppBar(

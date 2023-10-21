@@ -6,14 +6,17 @@ class NotesListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(itemBuilder: (context, index) {
-      return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 5),
-        child: NoteCard(
-          color: Color(0xffFFCC80),
-          title: 'Flutter tips',
-        ),
-      );
-    });
+    return ListView.builder(
+      itemBuilder: (context, index) {
+        return const Padding(
+          padding: EdgeInsets.symmetric(vertical: 5),
+          child: NoteCard(
+            color: Color(0xffFFCC80),
+            title: 'Flutter tips',
+          ),
+        );
+      },
+      itemCount: 10,
+    );
   }
 }
