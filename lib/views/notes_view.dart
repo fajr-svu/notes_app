@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/wedgits/costum_note_card.dart';
+import 'package:notes_app/wedgits/costum_listview.dart';
 
 class NotesView extends StatelessWidget {
   const NotesView({super.key});
@@ -17,14 +17,11 @@ class NotesView extends StatelessWidget {
                 icon: Icon(Icons.search),
               ),
             ]),
-        body: Padding(
-          padding: const EdgeInsets.only(left: 16, right: 16),
+        body: const Padding(
+          padding: EdgeInsets.only(left: 16, right: 16),
           child: Column(
             children: [
-              NoteCard(
-                color: Color(0xffFFCC80),
-                title: 'Flutter tips',
-              ),
+              Expanded(child: NotesListView()),
             ],
           ),
         ));
