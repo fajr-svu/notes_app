@@ -7,23 +7,28 @@ class NotesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-            elevation: 0,
-            backgroundColor: Colors.transparent,
-            title: Text('Notes'),
-            actions: [
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.search),
-              ),
-            ]),
-        body: const Padding(
-          padding: EdgeInsets.only(left: 16, right: 16),
-          child: Column(
-            children: [
-              Expanded(child: NotesListView()),
-            ],
-          ),
-        ));
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
+      ),
+      appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+          title: Text('Notes'),
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.search),
+            ),
+          ]),
+      body: const Padding(
+        padding: EdgeInsets.only(left: 16, right: 16),
+        child: Column(
+          children: [
+            Expanded(child: NotesListView()),
+          ],
+        ),
+      ),
+    );
   }
 }
