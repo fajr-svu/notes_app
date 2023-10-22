@@ -21,16 +21,16 @@ class CostumTextField extends StatelessWidget {
       maxLines: maxlines,
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: TextStyle(color: Colors.greenAccent),
+        hintStyle: const TextStyle(color: Colors.greenAccent),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: Colors.white,
           ),
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: Colors.white,
           ),
         ),
