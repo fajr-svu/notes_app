@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_app/cubits/cubit/read_notes_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 
 class NoteCard extends StatelessWidget {
@@ -45,6 +47,7 @@ class NoteCard extends StatelessWidget {
               ),
               onPressed: () {
                 note.delete();
+                BlocProvider.of<ReadNotesCubit>(context).fetchAllNotes();
               },
             ),
           ),
