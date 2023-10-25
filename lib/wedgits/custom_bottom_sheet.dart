@@ -8,9 +8,10 @@ class CostumBottomSheet extends StatelessWidget {
   const CostumBottomSheet({super.key});
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16),
-      child: SingleChildScrollView(
+    return BlocProvider(
+      create: (context) => AddNotesCubitCubit(),
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16),
         child: BlocConsumer<AddNotesCubitCubit, AddNotesCubitState>(
           listener: (context, state) {
             if (state is NotesSuccess) {
@@ -23,7 +24,7 @@ class CostumBottomSheet extends StatelessWidget {
           builder: (context, state) {
             return ModalProgressHUD(
                 inAsyncCall: state is NotesLoading ? true : false,
-                child: AddNoteForm());
+                child: SingleChildScrollView(child: AddNoteForm()));
           },
         ),
       ),

@@ -7,11 +7,21 @@ class EditView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+      appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+          title: Text('Edit Note'),
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.done),
+            ),
+          ]),
       body: Column(children: [
         Padding(
           padding: EdgeInsets.only(left: 10, right: 4),
-          child: CostumAppBar(title: 'Edit Note', icon: Icons.done),
+          //child: CostumAppBar(title: 'Edit Note', icon: Icons.done),
         ),
         Padding(
           padding: EdgeInsets.only(top: 20, right: 10, left: 10),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/models/note_model.dart';
 
 class NoteCard extends StatelessWidget {
-  const NoteCard({super.key, required this.color, required this.title});
-  final Color color;
-  final String title;
+  const NoteCard({super.key, required this.note});
+  final NoteModel note;
 
   @override
   Widget build(BuildContext context) {
@@ -15,22 +15,22 @@ class NoteCard extends StatelessWidget {
         padding:
             const EdgeInsets.only(top: 20, bottom: 20, right: 10, left: 10),
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16), color: color),
+            borderRadius: BorderRadius.circular(16), color: Color(note.color)),
         //height: 150,
         //width: 300,
         child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
           ListTile(
             title: Text(
-              title,
+              note.title,
               style: const TextStyle(
                 color: Colors.black,
                 fontSize: 25,
               ),
             ),
-            subtitle: const Padding(
-              padding: EdgeInsets.only(top: 20, bottom: 20),
+            subtitle: Padding(
+              padding: const EdgeInsets.only(top: 20, bottom: 20),
               child: Text(
-                'Build your career with Fajoora',
+                note.subtitle,
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: 18,
@@ -43,11 +43,13 @@ class NoteCard extends StatelessWidget {
                 color: Colors.black,
                 size: 30,
               ),
-              onPressed: () {},
+              onPressed: () {
+                note.delete();
+              },
             ),
           ),
-          const Text(
-            'May 21 , 2023',
+          Text(
+            note.date,
             style: TextStyle(
               color: Colors.grey,
             ),
