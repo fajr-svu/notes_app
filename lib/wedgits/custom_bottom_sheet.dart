@@ -25,8 +25,11 @@ class CostumBottomSheet extends StatelessWidget {
           },
           builder: (context, state) {
             return ModalProgressHUD(
-                inAsyncCall: state is NotesLoading ? true : false,
-                child: SingleChildScrollView(child: AddNoteForm()));
+              inAsyncCall: state is NotesLoading ? true : false,
+              child: SingleChildScrollView(
+                child: AddNoteForm(),
+              ),
+            );
           },
         ),
       ),
