@@ -12,7 +12,7 @@ class CostumBottomSheet extends StatelessWidget {
     return BlocProvider(
       create: (context) => AddNotesCubitCubit(),
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         child: BlocConsumer<AddNotesCubitCubit, AddNotesCubitState>(
           listener: (context, state) {
             if (state is NotesSuccess) {

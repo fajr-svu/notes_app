@@ -23,9 +23,6 @@ class NotesApp extends StatelessWidget {
     return BlocProvider(
       create: (context) => ReadNotesCubit(),
       child: MaterialApp(
-        routes: {
-          'EditView': (context) => const EditView(),
-        },
         debugShowCheckedModeBanner: false,
         theme: ThemeData.dark(),
         home: const NotesView(),

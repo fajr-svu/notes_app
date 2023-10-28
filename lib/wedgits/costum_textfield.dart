@@ -2,14 +2,20 @@ import 'package:flutter/material.dart';
 
 class CostumTextField extends StatelessWidget {
   const CostumTextField(
-      {super.key, required this.hintText, this.maxlines = 1, this.onsaved});
+      {super.key,
+      required this.hintText,
+      this.maxlines = 1,
+      this.onsaved,
+      this.onChanged});
   final String hintText;
   final int maxlines;
   final void Function(String?)? onsaved;
+  final Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: onChanged,
       onSaved: onsaved,
       validator: (value) {
         if (value?.isEmpty ?? true) {
